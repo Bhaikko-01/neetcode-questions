@@ -30,6 +30,8 @@ int search(vector<int>& nums, int target)
     }
   }
 
+  // cout << r << endl;
+
   return -1;
 }
 
