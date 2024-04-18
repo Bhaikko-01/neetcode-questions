@@ -30,7 +30,9 @@ int search(vector<int>& nums, int target)
     }
   }
 
-  // cout << r << endl;
+  // ! r will point to element just less than target if target not found
+  // ! target can be inserted after this element
+  cout << r << endl;
 
   return -1;
 }
