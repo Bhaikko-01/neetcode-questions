@@ -23,6 +23,7 @@
     "valarray": "cpp",
     "vector": "cpp",
     "ranges": "cpp",
-    "stacktrace": "cpp"
+    "stacktrace": "cpp",
+    "new": "cpp"
   }
 }
