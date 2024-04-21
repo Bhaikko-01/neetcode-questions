@@ -1,5 +1,5 @@
 /**
- * 1. DFS - O(V)
+ * 1. DFS - O(V + E)
  *      Maintain isVisited for each node and check if it is reached again
  *      Make sure, neighbor is not same node from which we reached current code,
  *        pass currNode as parent as well to DFS of neighbor

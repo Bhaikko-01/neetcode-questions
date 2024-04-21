@@ -8,7 +8,7 @@
  * 2. Cycle Detection using DFS O(v + e)
  *      Convert edge list to adjacency list graph
  *      Use DFS to detect cycle and return the edge forming the cycle
- * 3. Union Find - O(n) [Used in krushkal algo as well]
+ * 3. Union Find - O(e) [Used in krushkal algo as well]
  *      Works on edges where parent and rank is maintained
  *      rank keep track of tree/graph size, smaller tree are merged into larger trees
  *      parent keeps track of parent of nodes
@@ -109,7 +109,7 @@ int findParent(int curr, vector<int>& parents) {
     return curr;
   }
 
-  // Updating parent for future
+  // Updating parent for future. Hence this takes O(1) time not O(v)
   parents[curr] = parents[parents[curr]];
 
   return findParent(parents[curr], parents);

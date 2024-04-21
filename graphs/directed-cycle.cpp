@@ -1,5 +1,5 @@
 /**
- * 1. DFS
+ * 1. DFS - O(V + E)
  *      maintain isVisited and recStack
  *        each DFS is treated independent of isVisited array hence for each DFS
  *          recStack is maintained and any element occuring twice in recStack is considered in cycle
