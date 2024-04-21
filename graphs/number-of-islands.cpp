@@ -1,0 +1,71 @@
+/**
+ * 1. DFS - O(m*n)
+ *      Use Depth first search to traverse connected 1's
+ *      Mark traversed point as '2'
+ *      Make sure in DFS to check for out of bounds index first then value
+ *        otherwise SEG Fault will occur
+*/
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+void dfs(vector<vector<char>>& grid, int x, int y, int m, int n)
+{
+  if (x < 0 || x >= m || y < 0 || y >= n || grid[x][y] == '0' || grid[x][y] == '2' ) {
+    return;
+  }
+
+  grid[x][y] = '2';
+
+  dfs(grid, x + 1, y, m, n);
+  dfs(grid, x - 1, y, m, n);
+  dfs(grid, x, y + 1, m, n);
+  dfs(grid, x, y - 1, m, n);
+}
+
+int numIslands(vector<vector<char>>& grid)
+{
+  int islands = 0;
+
+  int m = grid.size();
+  int n = grid[0].size();
+
+  for (int i = 0; i < m; i++) {
+    for (int j = 0; j < n; j++) {
+      if (grid[i][j] == '1') {
+        dfs(grid, i, j, m, n);
+        islands++;
+      }
+    }
+  }
+
+  return islands;
+}
+
+void solution()
+{
+  int m, n;
+  cin >> m >> n;
+
+  vector<vector<char>> grid(m, vector<char>(n));
+  for (int i = 0; i < m; i++) {
+    for (int j = 0; j < n; j++) {
+      cin >> grid[i][j];
+    }
+  }
+
+  cout << numIslands(grid) << endl;
+}
+
+int main()
+{
+  int n;
+  cin >> n;
+
+  for (int i = 1; i <= n; i++) {
+    solution();
+  }
+
+  return 0;
+}
