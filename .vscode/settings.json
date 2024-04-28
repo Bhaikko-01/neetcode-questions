@@ -24,6 +24,7 @@
     "vector": "cpp",
     "ranges": "cpp",
     "stacktrace": "cpp",
-    "new": "cpp"
+    "new": "cpp",
+    "*.tcc": "cpp"
   }
 }
