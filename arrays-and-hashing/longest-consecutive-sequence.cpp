@@ -1,6 +1,7 @@
 /**
  * 1. Search for chain for each element - O(n^2)
  * 2. Sort array and find consecutive numbers - O(nlogn)
+ *      This works because it asks for random sequence not subsequence
  * 3. Search for consecutive numbers - O(n) - [T + S]
  *  If element less than current exist, we have better answer
  *  Otherwise, keep searching for element greater than current
