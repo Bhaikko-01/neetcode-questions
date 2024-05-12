@@ -1,9 +1,8 @@
 /**
- * 1. Bruteforce - O(nlogn + n^2 + nklogn) ~ O(n^2) [T], O(n) [S]
+ * 1. Bruteforce - O(n + n^2 + nk) ~ O(n^2) [T], O(n) [S]
  *      Create groups and return answer based on that
  *      If n is not divisble by groupSize then groups can never be created
- *      Maintain map to store occurence of each number.
- *        Map is required because we need ordering of numbers
+ *      Maintain unordered_map to store occurence of each number.
  *      Run iterations till map is empty
  *        get minElement from map as that will be group starter
  *        Find successive elements of minElement and decrease occurence as group is created
@@ -23,8 +22,8 @@ bool isNStraightHand(vector<int>& hand, int groupSize)
     return false;
   }
 
-  map<int, int> occurences;
-  // O(nlogn)
+  unordered_map<int, int> occurences;
+  // O(n)
   for (int x: hand) {
     occurences[x]++;
   }
@@ -38,7 +37,7 @@ bool isNStraightHand(vector<int>& hand, int groupSize)
       groupStart = min(groupStart, x.first);
     }
 
-    // O(klogn)
+    // O(k)
     for (int i = 1; i <= groupSize; i++) {
       auto occurenceIteratorForGroupStart = occurences.find(groupStart);
 

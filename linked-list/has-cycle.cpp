@@ -15,16 +15,18 @@
  *        At each iteration, it will reduce by 1 hence O(n)
  *
  * --------------- Linked List cycle 2
- * 1. Match Entry pointer with intersection slow pointe
+ * 1. Match Entry pointer with intersection slow pointer
  *    After finding intersection point using above algo, (Hare and Tortoise method)
  *      Move entryPointer and slow together till they are equal
  *      That node is cycle starter
  *    This works because fast travels twice the distance slow travels
- *      2(l1 + l2) = l1 + l2 + cycleLen
+ *      2*slow = fast
+ *      2(l1 + l2) = l1 + l2 + n*c
  *        l1 = cycleLen - l2 -> Moving entry till slow meets
- *        l1 is distance before reaching cycle
- *        l2 is distance travelled within cycle till intersection
- *        cycleLen is length of cycle from and to intersection Point
+ *        l1 is distance till cycle start
+ *        l2 is distance travelled from cycle start to intersection of slow and fast
+ *        c is length of cycle from and to intersection Point
+ *        n is number of cycles fast would have gone
 */
 
 #include <bits/stdc++.h>

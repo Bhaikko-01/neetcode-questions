@@ -7,7 +7,7 @@
  *        This is because, subStr will not be able to hold tOccurence
  *      else if all tOccurence satisfies above condition
  *        ans is that subStr
- * 2. Sliding Window 0 O(n)
+ * 2. Sliding Window O(n)
  *    Two pointer approach where l and r are subStr pointers
  *    maintain tOccurrence and subStrOccurence
  *    if solution found by comparing tOccurence and subStrOccurence

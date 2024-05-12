@@ -18,7 +18,7 @@ bool dfs(vector<int> adj[], int V, vector<bool>& visited, int curr, int parent)
       if (dfs(adj, V, visited, neighbour, curr)) {
         return true;
       }
-    } else if (neighbour != parent) {
+    } else if (visited[neighbour] && neighbour != parent) {
       return true;
     }
   }

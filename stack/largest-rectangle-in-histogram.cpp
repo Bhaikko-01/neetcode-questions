@@ -1,11 +1,13 @@
 /**
  * 1. Brute Force - O(n^2) [T]
- *    Try expanding heights[i] in both directions
+ *    Try expanding heights[i] in both directions such that we go till we get heights greater than current height
  *      leftReach and rightReach index should NOT be the one of less height than current
  *        but just before that since that will determine the width
- *      width = rightReact - leftReact + 1
- *      area = heights[i] * width  // No need to consider heights of others are current height will be min
+ *      width = rightReach - leftReach + 1
+ *      area = heights[i] * width  // No need to consider heights of others as current height will be
+ *                                     since we searched for heights less than current and skipped the ones greater
  * 2. Store nextLessElementIndex in both directions
+ *    We do this as just before this minHeight, we will have the max height to which we can span the current element
  *    Fill leftReachIndexes and rightReachIndexes using stack
  *      fill indexes just before and after rather than actual min index
  *      for no index from filling, assign 0 and n - 1 respectively

@@ -35,6 +35,7 @@ int jumpGraph(vector<int>& nums)
 
   // src = 0, dest = n - 1
   pending.push(0);
+  visited[0] = true;
 
   while (!pending.empty()) {
     int currLevelSize = pending.size();
@@ -71,6 +72,7 @@ int jump(vector<int>& nums)
 
   // src = 0, dest = n - 1
   pending.push(0);
+  visited[0] = true;
 
   while (!pending.empty()) {
     int currLevelSize = pending.size();

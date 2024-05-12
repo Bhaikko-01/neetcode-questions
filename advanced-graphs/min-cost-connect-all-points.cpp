@@ -38,12 +38,6 @@ int calculateManhattanDistance(vector<int>& point1, vector<int>& point2)
   return abs(point1[0] - point2[0]) + abs(point1[1] - point2[1]);
 }
 
-struct MinEdgeHeapComparator {
-  bool operator()(Edge a, Edge b) {
-    return a.weight > b.weight;
-  }
-};
-
 string findParent(string nodeKey, unordered_map<string, string>& parents)
 {
   if (nodeKey == parents[nodeKey]) {
@@ -100,7 +94,7 @@ int minCostConnectPoints(vector<vector<int>>& points)
     string v1Parent = findParent(v1, parents);
     string v2Parent = findParent(v2, parents);
 
-    // IF v1Parent and v2Parent is same then edge cannot be considered
+    // If v1Parent and v2Parent is same then edge cannot be considered
     if (v1Parent != v2Parent) {
       if (ranks[v1Parent] < ranks[v2Parent]) {
         parents[v1Parent] = v2Parent;

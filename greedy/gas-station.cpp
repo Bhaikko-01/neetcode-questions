@@ -20,6 +20,7 @@
 
 using namespace std;
 
+// ! 1.
 bool tryCycle(vector<int>& gas, vector<int>& cost, int i)
 {
   int n = gas.size();
@@ -42,6 +43,7 @@ bool tryCycle(vector<int>& gas, vector<int>& cost, int i)
   }
 }
 
+// ! 1.
 int canCompleteCircuitBrute(vector<int>& gas, vector<int>& cost)
 {
   int n = gas.size();
@@ -55,6 +57,7 @@ int canCompleteCircuitBrute(vector<int>& gas, vector<int>& cost)
   return -1;
 }
 
+// ! 2.
 int canCompleteCircuit(vector<int>& gas, vector<int>& cost)
 {
   int n = gas.size();

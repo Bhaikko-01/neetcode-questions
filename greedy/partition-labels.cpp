@@ -4,10 +4,12 @@
  *      Maintain hash tracking which elements have occured till now - occuredTillNow
  *      In each iteration,
  *        check if current element occurs in future,
- *        If yes, continue and put this in already occured element
+ *        If yes,
+ *          continue and put this in already occured element
  *        Else,
  *          check already occured elements using occuredTillNow hash occur in future, - O(26)
- *          If occur, continue and put this in already occured
+ *          If occur,
+ *            continue and put this in already occured
  *          Else
  *            count till now is answer for current index, push that and clear occuredTillNow hash
 */

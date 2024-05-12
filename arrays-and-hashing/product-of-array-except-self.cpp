@@ -9,9 +9,9 @@
  *    rrp[i] = rrp[i + 1] * nums[i + 1], rrp[n - 1] = 1, n - 1 >= i >= 1
  *    ans[i] = lrp[i] * rrp[i]
  * 3. Using ans array for LRP and RRP - O(n) [T]
- *  For left to right iteration, store LRP at i + 1 index. Maintain prefix in variable
+ *  For left to right iteration, store LRP at i index. Maintain prefix in variable
  *    ans[i] *= prefix; prefix *= nums[i], 0 <= i < n
- *  For right to left iteration, multiple RRP at i - 1 value which is LRP. Maintain postfix in variable
+ *  For right to left iteration, multiple RRP at i value which is LRP. Maintain postfix in variable
  *    ans[i] *= postfix; postfix *= nums[i], n > i >= 0
 */
 

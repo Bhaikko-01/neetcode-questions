@@ -7,7 +7,7 @@
  *        LCA is root
  *      This works because root has lesser elements on left and greater elements on right
  *        If we know, element doesnt occur on one sub-tree, we can remove it from search
- * 
+ *
  * ------ FOR NORMAL TREE
  * In this also, we search for p and q node but searching will need to be done on all nodes
  * 1. Brute Force - O(n) [T + S]
@@ -50,6 +50,7 @@ TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q)
   }
 
   // If both nodes are in Left subtree only, then LeftLCA is LCA
+  // as rightLCA is null and we couldnt find that in that subtree
   if (leftLCA) {
     return leftLCA;
   }

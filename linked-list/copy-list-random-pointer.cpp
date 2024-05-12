@@ -84,6 +84,7 @@ public:
 
       currHead = head;
 
+      // ! Attaching Random pointers
       while (currHead != nullptr) {
         if (currHead->random) {
           Node* oldRandom = currHead->random;
@@ -98,6 +99,7 @@ public:
       Node* newTail = nullptr;
       currHead = head;
 
+      // ! Cleaning cloned nodes attached to original
       while (currHead != nullptr) {
         if (newHead) {
           newTail->next = currHead->next;

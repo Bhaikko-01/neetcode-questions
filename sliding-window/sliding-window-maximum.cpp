@@ -41,7 +41,7 @@ vector<int> maxSlidingWindowBrute(vector<int>& nums, int k)
   return ans;
 }
 
-// ! 2.
+// ! 3.
 vector<int> maxSlidingWindow(vector<int>& nums, int k)
 {
   int n = nums.size();
@@ -77,9 +77,6 @@ vector<int> maxSlidingWindow(vector<int>& nums, int k)
 
   return ans;
 }
-
-// 1 3 1 2 0 5
-// 3 1 2
 
 void solution()
 {

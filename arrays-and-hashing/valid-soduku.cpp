@@ -1,5 +1,6 @@
 /**
  * 1. Check indiviual element validation
+ *  Use hashmap to check occurence of each character
  *  Iterate through row of that element
  *  Iterate through col of that element
  *  Check block of that element

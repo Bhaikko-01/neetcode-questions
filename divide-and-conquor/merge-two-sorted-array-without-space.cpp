@@ -1,11 +1,13 @@
 /**
  *    Create final arrays such that all elements in arr1 are less than arr2
  * 1. Insertion sort Without extra space - O(n*m)
- *      First array last element is smaller than second array first element
+ *      Need to update arrays like
+ *        First array last element is smaller than second array first element
  *      Check elements of arr1 and arr2.
  *      if arr1[i] > arr2[0]
  *        this greater element should exist in arr2
  *        swap with 0th index and move the swapped element in arr2 to correct position
+ *          using insertion sort technique
 */
 
 #include <bits/stdc++.h>
@@ -29,10 +31,6 @@ void merge(vector<int>& nums1, int n, vector<int>& nums2, int m)
           break;
         }
       }
-    }
-
-    if (nums1[i] == 0) {
-      break;
     }
   }
 }

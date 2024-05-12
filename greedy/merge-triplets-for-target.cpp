@@ -18,7 +18,6 @@ bool mergeTriplets(vector<vector<int>>& triplets, vector<int>& target)
        yFound = false,
        zFound = false;
 
-  vector<vector<int>> whitelistedTriplets;
   for (vector<int> triplet: triplets) {
     // ! This can be written as triplet == target as vectors are compared lexo-graphically
     if (triplet[0] == target[0] && triplet[1] == target[1] && triplet[2] == target[2]) {
@@ -40,11 +39,9 @@ bool mergeTriplets(vector<vector<int>>& triplets, vector<int>& target)
     if (triplet[2] == target[2]) {
       zFound = true;
     }
-
-    whitelistedTriplets.push_back(triplet);
   }
 
-  return xFound && yFound && zFound && whitelistedTriplets.size() >= 2;
+  return xFound && yFound && zFound;
 }
 
 void solution()

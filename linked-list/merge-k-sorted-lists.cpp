@@ -12,6 +12,12 @@
  *      Assign mergedPointers to currentPointers
  *      Do this till currentPointers size is 1
  *      return currentPointers[0]
+ * 3. Use Heap - O(nklogk)
+ *      Push all heads to heap
+ *      Pop heap and attach that to new list head
+ *        move that head to its next and push it to heap
+ *        dont push if it is null
+ *      Repeat till heap is empty
 */
 
 #include <bits/stdc++.h>

@@ -5,7 +5,7 @@
  *    distance[v] = min(distance[v], edge[u][v] + distance[u])
  *  Node with the least distance from source is selected and all neighbors using this node is relaxed (BFS)
  *    Heap can be used to arrange nodes based on distance from source
- * Dont process nodes that are processed, use isVisited array
+ *    When neighbor is relaxed, push it to PQ for selection in next iteration
  * Only works for graphs having nonnegative weight cycle
  * Time complexity - O((E + V)logV)
  *  inserting V nodes into minheap O(VlogV)
@@ -40,7 +40,6 @@ int dikjstra(vector<vector<int>>& times, int n, int k)
   int m = times.size();
 
   vector<Vertex*> graph(n + 1);
-  vector<bool> visited(n + 1, false);
   for (int i = 1; i <= n; i++) {
     graph[i] = new Vertex({ i, INT_MAX });
   }
@@ -62,21 +61,14 @@ int dikjstra(vector<vector<int>>& times, int n, int k)
     Vertex* currVertex = pending.top();
     pending.pop();
 
-    if (visited[currVertex->source]) {
-      continue;
-    }
-
-    visited[currVertex->source] = true;
-
     for (Neighbor* neighbor: currVertex->neighbors) {
       Vertex* neighborVertex = graph[neighbor->destination];
 
       int currDistance = currVertex->distance + neighbor->weight;
       if (currDistance < neighborVertex->distance) {
         neighborVertex->distance = currDistance;
+        pending.push(neighborVertex);
       }
-
-      pending.push(neighborVertex);
     }
   }
 

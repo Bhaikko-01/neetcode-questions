@@ -21,9 +21,7 @@ bool isDirectedCycle(vector<vector<int>>& graph, int curr, vector<bool>& visited
       if (isDirectedCycle(graph, neighbor, visited, recVisited)) {
         return true;
       }
-    }
-
-    if (visited[neighbor] && recVisited[neighbor]) {
+    } else if (visited[neighbor] && recVisited[neighbor]) {
       return true;
     }
   }

@@ -22,9 +22,7 @@ bool topoSort(vector<vector<int>>& graph, int curr, vector<bool>& visited, vecto
       if (topoSort(graph, neighbor, visited, recVisited, topoSortStack)) {
         return true;
       }
-    }
-
-    if (visited[neighbor] && recVisited[neighbor]) {
+    } else if (visited[neighbor] && recVisited[neighbor]) {
       return true;
     }
   }

@@ -78,11 +78,9 @@ bool findCycle(vector<vector<int>>& graph, int curr, vector<bool>& visited, int 
       if (findCycle(graph, neighbor, visited, curr, cycleEdge)) {
         return true;
       }
-
-      if (visited[neighbor] && neighbor != parent) {
-        cycleEdge = { curr, neighbor };
-        return true;
-      }
+    } else if (visited[neighbor] && neighbor != parent) {
+      cycleEdge = { curr, neighbor };
+      return true;
     }
   }
 

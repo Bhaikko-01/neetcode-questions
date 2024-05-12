@@ -71,6 +71,7 @@ bool checkInclusion(string s1, string s2)
   int l = 0, r = subStrSize - 1;
   int n = s2.size();
 
+  // ! Better to initialise window outside and perform operation as first thing in loop
   for (char a: s2.substr(l, subStrSize)) {
     s2Occurence[a]++;
   }

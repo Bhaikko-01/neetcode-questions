@@ -26,7 +26,6 @@ int networkDelayTime(vector<vector<int>>& times, int n, int k)
   int m = times.size();
 
   vector<vector<pp>> graph(n + 1, vector<pp>());
-  vector<bool> visited(n + 1, false);
   vector<int> distances(n + 1, INT_MAX);
 
   for (vector<int> time: times) {
@@ -47,12 +46,6 @@ int networkDelayTime(vector<vector<int>>& times, int n, int k)
 
     int nodeVal = currVertex.first;
 
-    if (visited[nodeVal]) {
-      continue;
-    }
-
-    visited[nodeVal] = true;
-
     for (pp neighbor: graph[nodeVal]) {
       int vertex = neighbor.first;
       int weight = neighbor.second;
@@ -60,9 +53,8 @@ int networkDelayTime(vector<vector<int>>& times, int n, int k)
       int currDistance = distances[nodeVal] + weight;
       if (currDistance < distances[vertex]) {
         distances[vertex] = currDistance;
+        pending.push({ vertex, currDistance });
       }
-
-      pending.push({ vertex, currDistance });
     }
   }
 

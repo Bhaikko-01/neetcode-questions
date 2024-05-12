@@ -2,6 +2,7 @@
  * 1. Maintain double pointer LL and Hashmap
  *    For O(1) search of key, maintain hash of key and pointer to node
  *    For O(1) insert and delete, maintain doubly LL to arrange head and tail
+ *      head will point to most recently used node
  *    For get,
  *      MoveTail to head while considering edge cases for head and tail
  *        by doing null checks on left and right
@@ -11,7 +12,6 @@
  *      Else
  *        Create newNode and attach to head
  *    Maintain head and tail pointers for O(1) updates in Linked List
- * 
  */
 
 #include <bits/stdc++.h>

@@ -4,14 +4,16 @@
  *    In each substring
  *      Find non-max element occuring count
  *    If non-max element occuring count <= k, then subStr is valid -> return subStr.length
- *      ans = max(ans, subStr.length - countOfMaxElement) -> Maximize this
+ *      if subStr.length - countOfMaxElement
+ *        ans = max(ans, subStr.length) -> Maximize this
  *    Else not valid -> return -1
  * 2. Sliding window to Maximize equation - O(n)
  *    Maintain two pointers - l and r that would be subStr length
  *    At each iteration, check maxOccuringElement in occurence hash
+ *      This will be O(26) computations as only uppercase letters
  *    The shifting of window works because,
 *       if window of size 'n is not valid for a specific size based on k,
- *      it will not be valid for any size greater n,
+ *      it will not be valid for any size greater k,
  *      so no need to increase window size
  *    If nonMaxOccuringCount <= k
  *      ans = max(ans, subStrLen); occurent[s[r]]++; r++;
@@ -87,7 +89,7 @@ int characterReplacement(string s, int k)
     int maxElOccurence = 0;
     char maxEl;
 
-    // ! This loop will be max executed 26 times
+    // ! This loop will be max executed 26 times - O(26)
     for (auto it = occurence.begin(); it != occurence.end(); it++) {
       if (maxElOccurence < it->second) {
         maxElOccurence = it->second;

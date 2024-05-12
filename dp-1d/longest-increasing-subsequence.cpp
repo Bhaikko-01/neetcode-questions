@@ -1,6 +1,6 @@
 /**
  * 1. Decision Tree DFS
- *      Consider for every we can create LIS and call recursion based on that
+ *      Consider for every element, we can create LIS and call recursion based on that
  *      In each call, if nums[i] > nums[currIndex] then we call recursion at that
  *        included = lis(nums, i) + 1
  *        maxLen = max(maxLen, included)
