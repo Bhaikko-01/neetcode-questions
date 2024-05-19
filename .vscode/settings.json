@@ -25,6 +25,9 @@
     "ranges": "cpp",
     "stacktrace": "cpp",
     "new": "cpp",
-    "*.tcc": "cpp"
+    "*.tcc": "cpp",
+    "limits": "cpp",
+    "chrono": "cpp",
+    "random": "cpp"
   }
 }
