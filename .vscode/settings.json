@@ -28,6 +28,7 @@
     "*.tcc": "cpp",
     "limits": "cpp",
     "chrono": "cpp",
-    "random": "cpp"
+    "random": "cpp",
+    "cmath": "cpp"
   }
 }
