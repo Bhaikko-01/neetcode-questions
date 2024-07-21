@@ -4,7 +4,7 @@
  *      Take decision for current element of hash if its count is more than 0
  *        Revert when decision tree comes back
  *      This works this way because we kept map for every position if we have picked specific element
- *        in currPermutation
+ *        in currPermutation. Not going backwards in terms of index to place curr element so duplicates doesnt occur
 */
 
 #include <bits/stdc++.h>
