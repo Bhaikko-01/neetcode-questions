@@ -46,7 +46,7 @@ int robDp(vector<int>& nums)
     dp[i] = max(robCurrentHouse, notRobCurrentHouse);
   }
 
-  return *max_element(dp.begin(), dp.end());
+  return dp[0];
 }
 
 void solution()

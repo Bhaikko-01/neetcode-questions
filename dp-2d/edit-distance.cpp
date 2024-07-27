@@ -52,7 +52,7 @@ int minDistance(string& word1, string& word2, int currIndex1, int currIndex2, un
   }
 
   int insertChar = minDistance(word1, word2, currIndex1, currIndex2 + 1, occured);
-  int deleteChar = minDistance(word1, word2, currIndex1 + 1, currIndex2 + 1, occured);
+  int deleteChar = minDistance(word1, word2, currIndex1 + 1, currIndex2, occured);
   int replaceChar = minDistance(word1, word2, currIndex1 + 1, currIndex2 + 1, occured);
 
   occured[key] = min(insertChar, min(deleteChar, replaceChar)) + 1;

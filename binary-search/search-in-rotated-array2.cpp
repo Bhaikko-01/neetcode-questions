@@ -30,7 +30,6 @@ bool search(vector<int>& nums, int target)
     if (nums[mid] == target) {
       return true;
     } else {
-
       if (nums[l] == nums[mid] && nums[mid] == nums[r]) {
         l++;
         r--;

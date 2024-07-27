@@ -35,11 +35,11 @@ int countPalindromicSubsequence(string s)
 
   int count = 0;
 
+  // O(26)
   for (unordered_map<char, pp>::iterator i = firstAndLastOccurence.begin(); i != firstAndLastOccurence.end(); i++) {
-    char el = i->first;
-
     unordered_map<int, bool> occured;
 
+    // O(n)
     for (int j = i->second.first + 1; j < i->second.second; j++) {
       occured[s[j]] = true;
     }

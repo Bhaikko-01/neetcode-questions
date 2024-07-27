@@ -1,6 +1,6 @@
 /**
  * 1. Backtracking
- *      Maintain concatenated string
+ *      Maintain concatenated string to check with currEl of arr
  *      Check if using currString has duplicate with concatenated
  *        If duplicate found, check withoutInclude only
  *        Else max(withInclude + length, withoutInclude)

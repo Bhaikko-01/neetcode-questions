@@ -6,7 +6,8 @@
  *      Maintain prefix sum till each index as we traverse array
  *      Maintain sum and find if (sum - k) has already occured as prefix sum
  *        If it has occured then count += prefixSumCount[sum - k]
- *      Make sure to add prefixSum to hashmap after processing count as we should not remove current element
+ *      Make sure to add prefixSum to hashmap after processing count
+ *        as Subarray size cannot be 0
  */
 
 #include <bits/stdc++.h>

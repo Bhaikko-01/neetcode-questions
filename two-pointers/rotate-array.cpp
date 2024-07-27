@@ -9,8 +9,8 @@ void rotate(vector<int>& nums, int k)
   int effectiveRotation = k % n;
 
   reverse(nums.begin(), nums.end());
-  reverse(nums.begin(), nums.begin() + effectiveRotation);
-  reverse(nums.begin() + effectiveRotation, nums.end());
+  reverse(nums.begin(), nums.begin() + effectiveRotation); // Rerversing first k element
+  reverse(nums.begin() + effectiveRotation, nums.end()); // Reversing last n - k elements
 }
 
 void solution()

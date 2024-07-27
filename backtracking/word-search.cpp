@@ -24,17 +24,19 @@ bool exist(vector<vector<char>>& board, int i, int j, int currWordIndex, string 
   }
 
   char currLetter = board[i][j];
+  // Used to mark if the current position is visited
   board[i][j] = '-';
 
-  bool wordFound =  exist(board, i + 1, j, currWordIndex + 1, word, m, n) ||
-                    exist(board, i - 1, j, currWordIndex + 1, word, m, n) ||
-                    exist(board, i, j + 1, currWordIndex + 1, word, m, n) ||
-                    exist(board, i, j - 1, currWordIndex + 1, word, m, n);
+  bool wordFound = exist(board, i + 1, j, currWordIndex + 1, word, m, n) ||
+                   exist(board, i - 1, j, currWordIndex + 1, word, m, n) ||
+                   exist(board, i, j + 1, currWordIndex + 1, word, m, n) ||
+                   exist(board, i, j - 1, currWordIndex + 1, word, m, n);
 
   if (wordFound) {
     return true;
   }
 
+  // Reverting isVisited marker
   board[i][j] = currLetter;
   return false;
 }

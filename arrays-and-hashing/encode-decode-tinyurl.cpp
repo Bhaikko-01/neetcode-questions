@@ -48,8 +48,6 @@ public:
     {
       int pathSlashIndex = getPathIndex(shortUrl);
 
-      cout << shortUrl.substr(pathSlashIndex + 1) << endl;;
-
       return mapping[shortUrl.substr(pathSlashIndex + 1)];
     }
 };

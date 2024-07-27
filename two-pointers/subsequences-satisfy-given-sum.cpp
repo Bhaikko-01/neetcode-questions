@@ -2,6 +2,7 @@
  * 1. Two pointer with Sorted O(nlogn)
  *      Sort the array
  *      Consider each element as min of a subsequence and find possible max for that subsequence
+ *      Move r to left till nums[r] > remainSum
  *        count += 2^(r - l)
  */
 

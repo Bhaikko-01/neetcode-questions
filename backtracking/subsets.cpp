@@ -63,7 +63,7 @@ vector<vector<int>> subsets(vector<int>& nums)
 {
   // return subsets(nums, 0);
 
-  // ! Common to pass initial Base data to append to 
+  // ! Common to pass initial Base data to append to
   vector<int> subset;
   vector<vector<int>> ans;
   subsets2(nums, 0, subset, ans);

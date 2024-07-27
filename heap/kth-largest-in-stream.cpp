@@ -8,7 +8,7 @@
  *      Find position to insert element - O(logn)
  *      Insert element at correct position and return - O(n)
  * 3. Min heap of k elements - O(n + nlogn)
- *      create heap of initial elements - O(n)
+ *      create min heap of initial elements - O(n)
  *      remove elements to make it k size which in worst case could be n - O(nlogn)
  *      Top element will be kth largest - O(1)
  *      pop and push new elements based on top of min heap - O(logn)

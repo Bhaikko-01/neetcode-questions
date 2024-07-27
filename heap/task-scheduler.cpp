@@ -5,6 +5,7 @@
  *    Already not executed by index
  * Max occurence is picked because it will be available quickest in future and less change of CPU idleness
  * 1. Brute Force - O(size * n * 26), size is number of tasks, n is cycle per task.
+ *      Polling out task queue if a task can be executed
  *      Pick max occuring element iteratively
  *        Task will be picked by checking in 'A' to 'Z' not using array index
  *          therefore, it will take O(26)

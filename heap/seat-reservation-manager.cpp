@@ -36,7 +36,7 @@ void solution()
   cout << seatManager->reserve() << endl; // 2
   cout << seatManager->reserve() << endl; // 3
   cout << seatManager->reserve() << endl; // 4
-  cout << seatManager->reserve() << endl; //5 
+  cout << seatManager->reserve() << endl; // 5
   seatManager->unreserve(5);
 }
 

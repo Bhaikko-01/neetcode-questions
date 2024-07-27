@@ -1,3 +1,13 @@
+/**
+ * 1. Min heap of Burst time - O(nlogn)
+ *      Sorf tasks based on arrival time
+ *      Start execution till all tasks completed or Pending task in minHead pendingTasks of burstTime
+ *      If pendingTasks is empty, set currTime to arrivalTime of currIndex
+ *      Else process the task at top of pendingTasks queue
+ *
+ *      Push all the tasks with arrivalTime less than currTime to pendingTasks queue
+ */
+
 #include <bits/stdc++.h>
 
 using namespace std;

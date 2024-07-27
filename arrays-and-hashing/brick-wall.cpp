@@ -3,7 +3,7 @@
  *      Consider every possible width and make cuts
  *        by iterating down every column
  *      Track which width is currently used by maintaing
- *        rowIndexes and cosideredWidths
+ *        rowIndexes and consideredWidths
  * 2. Store Gap occurence - O(n * m)
  *      Store gap index occurence in a map by iterating at each row and column
  *        make sure not to include last column of each array

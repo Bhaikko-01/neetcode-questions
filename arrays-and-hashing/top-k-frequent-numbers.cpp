@@ -9,6 +9,7 @@
  * 3. Use bucket sort with storage trick - O(n) [Time and space]
  *  Store occurences as same in above methods
  *  Store count as index for array and array value at array index as array
+ *    Creating a reverse mapping of occurence and all elements with same occurent
  *  Max array length for bucket sort array would be same as array as
  *    that could be the max number of times a value can repeat
  *  Find index from end that has non-zero value

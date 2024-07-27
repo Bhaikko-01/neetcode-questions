@@ -2,8 +2,8 @@
  * 1. Brute Force - O(n^2)
  *      Rotate array when duplicate encountered
  * 2. Swap - O(n)
- *      Compare consecutive elements and find element greater than current
- *      swap and increment r
+ *     Maintain an index where we will put next unique value
+ *     Find unique value in array which will be strictly greater than lastVal
 */
 
 #include <bits/stdc++.h>
@@ -36,31 +36,21 @@ int removeDuplicates(vector<int>& nums)
 {
   int n = nums.size();
 
-  int l = 0,
-      r = 0;
+  int l = 1, r = 1;
+  int lastVal = nums[0];
 
-  while (l + 1 < n && r < n) {
-    if (nums[l] >= nums[l + 1]) {
-      while (r < n && nums[r] <= nums[l]) {
-        r++;
-      }
+  while (r < n) {
+    if (nums[r] != lastVal) {
+      lastVal = nums[r];
 
-      if (r == n) {
-        break;
-      }
-
-      swap(nums[l + 1], nums[r]);
-      r++;
+      nums[l] = nums[r];
+      l++;
     }
 
-    l++;
-
-    if (r < l) {
-      r = l;
-    }
+    r++;
   }
 
-  return l + 1;
+  return l;
 }
 
 void solution()

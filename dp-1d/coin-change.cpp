@@ -6,7 +6,7 @@
  *        If currCoin is not picked then call recursion with next index without decreased amount
  *      ans for curr index would be min(included, notIncluded)
  * 2. Memoize
- *      Need to memoize boht amount and index
+ *      Need to memoize both amount and index
  *        amount will signify if we have solved for this amount down the tree
  *        index will represent if we have solved for an amount when elements
  *          from this index to end are included

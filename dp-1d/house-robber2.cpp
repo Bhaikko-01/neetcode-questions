@@ -4,6 +4,7 @@
  *        include first house and dont include last
  *        dont include first house and include last house
  *      To code this, last index is also passed to rob method
+ *      Separate DPs managed for both
  * 2. DP
  *      code considering above decision tree
  *        dont include last element and go till 0th index
@@ -73,7 +74,7 @@ int robDp(vector<int>& nums)
     dp[i] = max(robCurrentHouse, notRobCurrentHouse);
   }
 
-  int firstHouseIncluded = *max_element(dp.begin(), dp.end());
+  int firstHouseIncluded = dp[0];
 
   // ! Including last house
   dp = vector(n + 1, 0);
@@ -86,7 +87,7 @@ int robDp(vector<int>& nums)
     dp[i] = max(robCurrentHouse, notRobCurrentHouse);
   }
 
-  int lastHouseIncluded = *max_element(dp.begin(), dp.end());
+  int lastHouseIncluded = dp[1];
 
   return max(firstHouseIncluded, lastHouseIncluded);
 }

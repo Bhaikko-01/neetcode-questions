@@ -4,8 +4,6 @@ using namespace std;
 
 typedef pair<int, bool> pp;
 
-typedef pair<int, bool> pp;
-
 pp minTime(unordered_map<int, vector<int>>& tree, vector<bool>& hasApple, int currNode, vector<bool>& visited)
 {
   if (visited[currNode]) {

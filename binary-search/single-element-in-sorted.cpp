@@ -7,12 +7,12 @@ using namespace std;
  *  mid + 1 <= r and mid - 1 >= l
  * mid is even
  *  currEl is first of repeated -> unique is on right
- *    r = mid - 1
+ *    r = mid - 2
  *  currEl is second of repeated -> unique is on left
- *    l = mid + 1
+ *    l = mid + 2
  * mid is odd
  *  currEl is second of repeated -> unique is on right
- *    r = mid - 2
+ *    r = mid - 1
  *  currEL is first of repeated -> unique is on left
  *    l = mid + 1
 */

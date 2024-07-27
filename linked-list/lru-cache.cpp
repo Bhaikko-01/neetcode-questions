@@ -1,5 +1,5 @@
 /**
- * 1. Maintain double pointer LL and Hashmap
+ * 1. Maintain doubly LL and Hashmap
  *    For O(1) search of key, maintain hash of key and pointer to node
  *    For O(1) insert and delete, maintain doubly LL to arrange head and tail
  *      head will point to most recently used node
