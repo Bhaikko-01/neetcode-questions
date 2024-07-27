@@ -7,6 +7,7 @@
  *    For each index, maxLength = max(maxLength, currLength)
  * 2. Optimise search of s[r] in "1." using Hashmap - O(n) [T + S]
  *    Before l++, occured[s[l]] = false // Removing the character from occured
+ *      Removing and marking false works because we never let the frequency a letter more than 2 here
  * 3. Maintain index of last occured - O(n) [T + S] - NOT RELATED TO "1." and "2."
 */
 

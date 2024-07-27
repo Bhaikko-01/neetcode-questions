@@ -5,7 +5,7 @@
  *    Find partition in both arrays such that
  *      Elements in left partition are all less than elements in right partition
  *      Number of Elements in left partition are equal to number of elements in right partition
- *    Find cuts for partition
+ *    Find cuts for partition, cuts tell us about the size of partitions
  *      cut1 = (l + r) / 2
  *      cut2 = (m + n) / 2 - cut1
  *      Using cut1 and cut2, comparison pointers are derived, l1, l2, r1, r2
@@ -19,8 +19,8 @@
  *      If m + n is even -> (max(l1, l2) + min(r1, r2)) / 2
  *      Else -> min(r1, r2)
  *    Else check which parition is wrong
- *      If l1 > r2 -> r = cut1 - 1 // Because we need to move r1 in right parition
- *      Else if l2 > r1 -> l = cut1 + 1 // Because we need to move r1 in left partition
+ *      If l1 > r2 -> r = cut1 - 1 // smaller l2 required, will exist on left of mid
+ *      Else if l2 > r1 -> l = cut1 + 1 // bigger r2 required, will exist on right of mid
 */
 #include <bits/stdc++.h>
 
@@ -32,6 +32,8 @@ double medianOfTwoSorted(vector<int>& nums1, vector<int>& nums2, int l, int r)
   int cut2 = (nums1.size() + nums2.size()) / 2 - cut1;
 
   // ! Assuming out of Bound values to be -INF and INF for comparison
+  // ! cut1 - 1 because cut1 tells how many elements in left partition of first array, hence
+  // ! boundary element will be nums[cut1 - 1]
   int l1 = cut1 <= 0 ? INT_MIN : nums1[cut1 - 1];
   int l2 = cut2 <= 0 ? INT_MIN : nums2[cut2 - 1];
 
