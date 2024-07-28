@@ -25,6 +25,7 @@ void generateParenthesis(int n, int openingCount, int closingCount, vector<strin
 
   if (openingCount == n && closingCount == n) {
     parenthesis.push_back(currentParenthesis);
+    return;
   }
 
   generateParenthesis(n, openingCount + 1, closingCount, parenthesis, currentParenthesis + "(");
