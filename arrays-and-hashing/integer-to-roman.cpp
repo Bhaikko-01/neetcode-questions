@@ -2,7 +2,7 @@
  * 1. Iterative - O(n)
  *      Maintain mapping of direct and indirect conversions
  *      Reduce num till not zero
- *      Divide by mapping number to get prefex and append symbol the quiotent times
+ *      Divide by mapping number to get prefix and append symbol the quotient times
  *      Reduce number by modulo
  */
 

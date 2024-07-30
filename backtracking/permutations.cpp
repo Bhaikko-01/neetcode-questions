@@ -39,6 +39,39 @@ vector<vector<int>> permute(vector<int>& nums)
   return ans;
 }
 
+// ! 2.
+void permute(vector<int>& nums, vector<int> currPermutation, vector<vector<int>>& ans, vector<bool>& picked) {
+  int n = nums.size();
+
+  if (currPermutation.size() == n) {
+    ans.push_back(currPermutation);
+    return;
+  }
+
+  for (int i = 0; i < n; i++) {
+    if (!picked[i]) {
+      picked[i] = true;
+      currPermutation.push_back(nums[i]);
+
+      permute(nums, currPermutation, ans, picked);
+
+      currPermutation.pop_back();
+      picked[i] = false;
+    }
+  }
+}
+
+vector<vector<int>> permute(vector<int>& nums) {
+  vector<vector<int>> ans;
+  int n = nums.size();
+  vector<bool> picked(n, false);
+
+  permute(nums, vector<int>(0), ans, picked);
+
+  return ans;
+}
+
+
 void solution()
 {
   int n;

@@ -21,12 +21,11 @@
  *      That node is cycle starter
  *    This works because fast travels twice the distance slow travels
  *      2*slow = fast
- *      2(l1 + l2) = l1 + l2 + n*c
- *        l1 = cycleLen - l2 -> Moving entry till slow meets
- *        l1 is distance till cycle start
- *        l2 is distance travelled from cycle start to intersection of slow and fast
- *        c is length of cycle from and to intersection Point
- *        n is number of cycles fast would have gone
+ *      2(l1 + l2) = l1 + l2 + l3
+ *        l1 = l3 -> Move l1 same as l3 to reach cycle start
+ *        l1 is distance till cycle start which is travelled by both
+ *        l2 is distance travelled from cycle start till intersection met. Not node distance but total distance
+ *        l3 is distance travelled from intersection point till start of cycle
 */
 
 #include <bits/stdc++.h>

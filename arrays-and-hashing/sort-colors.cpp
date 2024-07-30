@@ -33,15 +33,12 @@ void sortColors(vector<int>& nums)
     if (nums[i] == 0) {
       swap(nums[zero], nums[i]);
       zero++;
+      i++;
     } else if (nums[i] == 2) {
       swap(nums[i], nums[two]);
       two--;
     } else if (nums[i] == 1) {
       i++;
-    }
-
-    if (zero > i) {
-      i = zero;
     }
   }
 }

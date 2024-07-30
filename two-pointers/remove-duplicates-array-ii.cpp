@@ -14,7 +14,7 @@ int removeDuplicates(vector<int>& nums)
   int n = nums.size();
 
   int l = 1,
-      count = 0;
+      count = 1;
 
   for (int i = 1; i < n; i++) {
     if (nums[i - 1] == nums[i]) {

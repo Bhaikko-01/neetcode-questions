@@ -7,7 +7,7 @@
  *          character will be inserted before current position so no need to move word1 ahead
  *          move word2 ahead only
  *        delete: (i + 1, j)
- *          character will be deleted at current index so ned to move ahead
+ *          character will be deleted at current index so need to move ahead
  *        relace: (i + 1, j + 1)
  *          assuming we place correct character, we move ahead both pointers
 */

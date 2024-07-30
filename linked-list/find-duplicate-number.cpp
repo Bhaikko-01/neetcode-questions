@@ -29,7 +29,6 @@ int findDuplicate(vector<int>& nums)
   int entry = nums[0];
 
   while (entry != slow) {
-    cout << entry << " " << slow << endl;
     entry = nums[entry];
     slow = nums[slow];
   }

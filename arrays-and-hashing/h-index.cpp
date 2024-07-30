@@ -11,7 +11,7 @@
  *        since all elements to right of currCitation will always be greater than currCitation
  *        This is ans
  *      As we move right, we have decreasing possibleHIndex so first match is ans
- *        if possibleHIndex doesnt satisfy condition then it can never be ans as element to right as less than possibleHIndex
+ *        if possibleHIndex doesnt satisfy condition then it can never be ans as element to right are less than possibleHIndex
  */
 
 #include <bits/stdc++.h>

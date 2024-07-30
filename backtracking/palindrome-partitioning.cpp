@@ -1,7 +1,7 @@
 /**
  * 1. Backtracking - O(n*2^n)
  *      Partition string at each iteration from currIndex to (n - 1)
- *        parition of increasing size are done, for eg 1, 2, 3 till currIndex + size <= n
+ *        partition of increasing size are done, for eg 1, 2, 3 till currIndex + size <= n
  *        Call recursion on (currIndex + size) index
  *      If curr left parition is palindrone, then only subsequent calls are made for paritions
  *        left parition is pushed to running paritions
@@ -51,8 +51,6 @@ void partition(string s, int currIndex, vector<string> partitions, vector<vector
   if (currIndex > n) {
     return;
   }
-
-  vector<vector<string>> currPartitions;
 
   for (int size = 1; size + currIndex <= n; size++) {
     string partitionSubstring = s.substr(currIndex, size);
