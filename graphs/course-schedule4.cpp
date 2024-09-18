@@ -1,83 +1,60 @@
+/**
+ * Graph is maintained such that if [a,b] exists,
+ *  which means a is prerequisite of b then there is an edge from b to a
+ *  meaning, for b, a must be finised first
+ * 1. DFS for every query - O(q * (n + e))
+ *      run DFS, if query[0] occurs when starting DFS from query[1] then
+ *      query[0] must be finished before query[1]
+ * 2. For every node, get all nodes possible to reach from that
+ *    Then use that hashmap to ans queries
+ *    DP can be used to populate hash-of-hashes
+ */
+
 #include <bits/stdc++.h>
 
 using namespace std;
 
-void topoSortDfs(vector<vector<int>>& graph, int currVertex, vector<bool>& isVisited, stack<int>& topoSorted)
+unordered_map<int, bool> dfs(vector<vector<int>>& graph, int curr, unordered_map<int, unordered_map<int, bool>>& reachable)
 {
-  isVisited[currVertex] = true;
+  if (reachable.find(curr) != reachable.end()) {
+    return reachable[curr];
+  }
 
-  for (int neighbor: graph[currVertex]) {
-    if (!isVisited[neighbor]) {
-      topoSortDfs(graph, neighbor, isVisited, topoSorted);
+  reachable[curr] = unordered_map<int, bool>();
+
+  for (int neighbor: graph[curr]) {
+    unordered_map<int, bool> neighborMapping = dfs(graph, neighbor, reachable);
+
+    reachable[curr][neighbor] = true;
+
+    for (auto x: neighborMapping) {
+      reachable[curr][x.first] = true;
     }
   }
 
-  topoSorted.push(currVertex);
-}
-
-int findIndex(vector<int>& arr, int el)
-{
-  int n = arr.size();
-  for (int i = 0; i < n; i++) {
-    if (arr[i] == el) {
-      return i;
-    }
-  }
-
-  return -1;
-}
-
-bool findCourseQuery(vector<int> topoSorts, int first, int second)
-{
-  int n = topoSorts.size();
-
-  int firstIndex = findIndex(topoSorts, first);
-  int secondIndex = findIndex(topoSorts, second);
-
-  cout << endl;
-  cout << first << " " << firstIndex << endl;
-  cout << second << " " << secondIndex << endl;
-  cout << endl;
-
-  if (firstIndex == -1 || secondIndex == -1) {
-    return false;
-  }
-
-  return firstIndex < secondIndex;
+  return reachable[curr];
 }
 
 vector<bool> checkIfPrerequisite(int numCourses, vector<vector<int>>& prerequisites, vector<vector<int>>& queries)
 {
   vector<vector<int>> graph(numCourses, vector<int>());
 
-  int n = prerequisites.size();
-  for (int i = 0; i < n; i++) {
-    graph[prerequisites[i][0]].push_back(prerequisites[i][1]);
+  for (auto prerequisite: prerequisites) {
+    graph[prerequisite[1]].push_back(prerequisite[0]);
   }
 
-  vector<int> topoSort;
-  vector<bool> isVisited(numCourses, false);
-  stack<int> currSort;
+  unordered_map<int, unordered_map<int, bool>> reachable;
 
   for (int i = 0; i < numCourses; i++) {
-
-    if (!isVisited[i]) {
-      topoSortDfs(graph, i, isVisited, currSort);
+    if (reachable.find(i) == reachable.end()) {
+      dfs(graph, i, reachable);
     }
   }
 
-  while (!currSort.empty()) {
-    topoSort.push_back(currSort.top());
-    currSort.pop();
-  }
-
   vector<bool> ans;
-  int m = queries.size();
 
-  for (int i = 0; i < m; i++) {
-    bool currAns = findCourseQuery(topoSort, queries[i][0], queries[i][1]);
-
-    ans.push_back(currAns);
+  for (vector<int> query: queries) {
+    ans.push_back(reachable[query[1]][query[0]]);
   }
 
   return ans;

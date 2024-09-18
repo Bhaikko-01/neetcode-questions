@@ -11,7 +11,7 @@ int reverse(int x)
 
   while (currNum != 0) {
     if (rev < minNegativeVal || rev > maxPositiveVal) {
-        return 0;
+      return 0;
     }
 
     int rem = currNum % 10;
