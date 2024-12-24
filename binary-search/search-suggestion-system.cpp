@@ -1,5 +1,12 @@
 /**
- * ! Add Comments
+ * 1. Binary Search - O(nlogn)
+ *      For every prefix in searchWord, get leftMost element in products array
+ *      Sort products array and use Binary search
+ *        If mid element matches as prefix in currWord, then its possible leftMost element
+ *        Search in left subArray if mid element is lexo smaller than mid
+ *        Else search in write
+ *      Binary Search will return leftMost element,
+ *        Try for 3 elements from that index if those match the current prefix
  */
 
 #include <bits/stdc++.h>
