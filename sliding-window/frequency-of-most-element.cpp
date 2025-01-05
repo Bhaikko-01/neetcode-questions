@@ -5,6 +5,8 @@
  *      ans = max(ans, count)
  * 2. Sliding Window - O(n)
  *      Sort array
+ *        We sort because we can only increase values, not decrease.
+ *        To be sure that we only increase values before currVal, we sort and perform operations on left values
  *      Maintain sum of window
  *      For currElement,
  *        numOfElToLeft = r - l;
