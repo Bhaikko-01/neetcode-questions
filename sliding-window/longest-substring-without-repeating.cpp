@@ -9,6 +9,13 @@
  *    Before l++, occured[s[l]] = false // Removing the character from occured
  *      Removing and marking false works because we never let the frequency a letter more than 2 here
  * 3. Maintain index of last occured - O(n) [T + S] - NOT RELATED TO "1." and "2."
+ *
+ *
+ *
+ * ! General Way to handle sliding window problems
+ * - Use for loop for 'r' till end to always increase window
+ * - Make the window valid using while loop
+ * - If window is valid, process it and continue
 */
 
 #include <bits/stdc++.h>
@@ -87,6 +94,30 @@ int lengthOfLongestSubstring(string s)
     }
 
     maxLength = max(maxLength, currLength);
+  }
+
+  return maxLength;
+}
+
+int lengthOfLongestSubstringX(string s)
+{
+  int n = s.length();
+
+  unordered_map<char, bool> occured;
+
+  int maxLength = 0,
+      l = 0;
+
+  for (int r = 0; r < n; r++) {
+    while (occured[s[r]]) {
+      occured[s[l]] = false;
+      l++;
+    }
+
+    occured[s[r]] = true;
+
+    int currLen = r - l + 1;
+    maxLength = max(maxLength, currLen);
   }
 
   return maxLength;

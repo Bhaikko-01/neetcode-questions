@@ -24,7 +24,6 @@ bool isSameTree(TreeNode* p, TreeNode* q)
   }
 
   return false;
-
 }
 
 bool isSubtree(TreeNode* root, TreeNode* subRoot)

@@ -2,8 +2,8 @@
  * 1. Brute Force - O(n^2)
  *    Find nextGreater index in each iteration. This would take O(n) time
  *    ans[i] = nextGreater[i] - i
- * 2. Optimise nextGreaterIndexes using Monotonically increasing stack - O(n) [T + S]
-  *     Monotonically increasing stack contain increasing elements bottom to top
+ * 2. Optimise nextGreaterIndexes using Monotonically decreasing stack - O(n) [T + S]
+  *     Monotonically decreasing stack contain decreasing elements bottom to top
  *      Can be found by comparing top index of stack to current index element
  *      If element is less than current, pop till element strictly greater found
  *        Popping elements may yield stack empty that means no element found.

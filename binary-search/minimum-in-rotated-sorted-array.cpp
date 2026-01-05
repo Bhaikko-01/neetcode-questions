@@ -1,5 +1,5 @@
 /**
- * 1. Brute Force - O(^2)
+ * 1. Brute Force - O(n)
  *    Search linearly
  * 2. Binary search O(logn)
  *    If array between l and r is sorted, minEl = min(minEl, arr[l])

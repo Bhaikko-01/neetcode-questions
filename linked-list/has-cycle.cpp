@@ -20,12 +20,21 @@
  *      Move entryPointer and slow together till they are equal
  *      That node is cycle starter
  *    This works because fast travels twice the distance slow travels
- *      2*slow = fast
- *      2(l1 + l2) = l1 + l2 + l3
- *        l1 = l3 -> Move l1 same as l3 to reach cycle start
- *        l1 is distance till cycle start which is travelled by both
- *        l2 is distance travelled from cycle start till intersection met. Not node distance but total distance
- *        l3 is distance travelled from intersection point till start of cycle
+ *      Let l1 be distance from head to start of cycle
+ *      Let l2 be distance travelled by slow from start of cycle to intersection
+ *      Let C be length of one cycle
+ *      Let l3 be distance of intersection to start of cycle
+ *      s = l1 + l2
+ *      f = 2(l1 + l2)
+ *
+ *      At the point of intersection, fast would have travelled (cycle length + slow distance)
+ *        f = s + nC
+ *        l1 + l2 = nC (Equation 1)
+ *        l1 = nC - l2 = l3
+
+ *      Also, l2 + l3 = nC -> nC - l2 = l3 (Equation 2)
+ *      Therefore, l1 = l3 -> Which means the further distance s should travel to reach point of cycle
+ *
 */
 
 #include <bits/stdc++.h>

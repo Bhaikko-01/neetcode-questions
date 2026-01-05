@@ -71,7 +71,7 @@ ListNode* reverseListIterative(ListNode* head)
 
 void solution()
 {
-  
+
 }
 
 int main()

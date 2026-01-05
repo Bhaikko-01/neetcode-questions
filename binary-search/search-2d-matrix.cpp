@@ -1,5 +1,5 @@
 /**
- * 1. Brute Force - O(log(m + n))
+ * 1. Brute Force - O(log(m * n))
  *    Convert into 1D array and binary search on that
  * 2. Convert indexes from 1D to 2D - O(log(m * n)) and binary search
  *      l = 0, r = m * n - 1, n is number of columns
